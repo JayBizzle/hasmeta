@@ -1,0 +1,23 @@
+{
+    "name": "jaybizzle/hasmeta",
+    "description": "Access model meta data as if it was a property on your model",
+    "authors": [
+        {
+            "name": "Mark Beech",
+            "email": "mbeech@mark-beech.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Jaybizzle\\Hasmeta\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
