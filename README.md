@@ -19,11 +19,3 @@ In the Model that you want to utilise `HasMeta` add the following properties
 	protected $meta_key_name    = 'dataName'; // the column name that stores your meta data key name
 	protected $meta_value_name  = 'dataValue'; // the column name that stores you meta data value
 ```
-
-Finally, add the following relationship
-
-```php
-	public function meta() { // has to be called 'meta'
-		return $this->hasMany('modelName', 'id', 'meta_id');
-	}
-```
