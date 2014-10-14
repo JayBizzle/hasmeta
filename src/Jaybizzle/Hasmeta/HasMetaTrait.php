@@ -133,7 +133,6 @@ trait HasMetaTrait
 			} else {
 				$meta = $this->meta;
 
-				dd($meta);
 				$niceDataArray = array();
 
 				foreach ($meta as $data) {
