@@ -26,11 +26,13 @@ trait HasMetaTrait
 
 
 	/**
-	 * Get the data associated with this opportunity
+	 * Get the data associated with this model
 	 *
 	 * @return hasOne
 	 */
-	abstract public function meta();
+	public function meta() {
+		return $this->hasMany($this->meta_model, $this->meta_foreign_key, $this->meta_primary_key);
+	}
 
 	/**
 	 * Dynamically retrieve attributes on the model.
