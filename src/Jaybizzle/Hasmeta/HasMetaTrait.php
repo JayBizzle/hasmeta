@@ -18,8 +18,6 @@ trait HasMetaTrait
 
 			}
 		}
-		
-		$metaModel->employerID = $this->employerID;
 
 		return $metaModel;
 	}
