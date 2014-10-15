@@ -44,7 +44,7 @@ trait HasMetaTrait
 		if (is_null($value)) {
 			try {
 				if(isset($this->getMeta()->$key)) {
-					$value = $this->getMeta()->$key->dataValue;
+					$value = $this->getMeta()->$key->{$this->meta_value_name};
 				} else {
 					$value = NULL;
 				}
@@ -71,7 +71,7 @@ trait HasMetaTrait
 
 		try {
 			if (isset($this->getMeta()->$key)) {
-				$this->getMeta()->$key->dataValue = $value;
+				$this->getMeta()->$key->{$this->meta_value_name} = $value;
 				return;
 			}
 		} catch (Exception $e) { }
@@ -95,7 +95,7 @@ trait HasMetaTrait
 			return true;
 		}
 
-		return isset($this->getMeta()->$key->dataValue);
+		return isset($this->getMeta()->$key->{$this->meta_value_name});
 	}
 
 	public function push() {
