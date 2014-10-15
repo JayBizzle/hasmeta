@@ -150,7 +150,7 @@ trait HasMetaTrait
 
 		foreach ((array)$this->getMeta() as $data) {
 			if (is_null($data->$primaryKey)) {
-				$data->$primaryKey = $this->$primaryKey;
+				$data->primaryKey = $this->$primaryKey;
 			}
 			
 			if(!is_null($data->{$this->meta_value_name}))
