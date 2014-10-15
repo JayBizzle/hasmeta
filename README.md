@@ -6,7 +6,7 @@ A Laravel trait to access model meta data as if it was a property on your model
 Installation
 ============
 
-Run `composer require jaybizzle/hasmeta 0.1.*` or add `"jaybizzle/hasmeta": "dev-master"` to your `composer.json` file
+Run `composer require jaybizzle/hasmeta 0.1.*` or add `"jaybizzle/hasmeta": "0.1.*"` to your `composer.json` file
 
 In the Model that you want to utilise `HasMeta` add the following properties
 
