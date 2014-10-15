@@ -29,7 +29,7 @@ trait HasMetaTrait
 	 * @return hasOne
 	 */
 	public function meta() {
-		return $this->hasMany($this->meta_model, $this->meta_foreign_key, $this->meta_primary_key);
+		return $this->hasMany($this->meta_model, $this->meta_foreign_key, $this->primaryKey);
 	}
 
 	/**
