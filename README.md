@@ -14,7 +14,7 @@ In the Model that you want to utilise `HasMeta` add the following properties
 	use Jaybizzle\Hasmeta\HasMetaTrait;
 
 	protected $meta_model       = 'ModelName'; // the name of your meta data model
-	protected $meta_foreign_key = 'id'; // the primary key of your main model
+	protected $meta_foreign_key = 'user_id'; // the foreign key of your main model
 	protected $meta_primary_key = 'meta_id'; // the primary key of you meta data model
 	protected $meta_key_name    = 'dataName'; // the column name that stores your meta data key name
 	protected $meta_value_name  = 'dataValue'; // the column name that stores you meta data value
@@ -132,5 +132,23 @@ We can save meta data easily too...
 ```PHP
 $user = User::find(1);
 $user->gender = 'Female';
+$user->save();
+```
+
+Delete meta...
+
+```PHP
+$user = User::find(1);
+$user->gender = null;
+$user->save();
+```
+
+New meta...
+
+Delete meta...
+
+```PHP
+$user = User::find(1);
+$user->anything_you_want = 'some lovely value';
 $user->save();
 ```
