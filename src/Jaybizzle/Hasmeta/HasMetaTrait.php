@@ -127,7 +127,7 @@ trait HasMetaTrait
 		if (is_null($this->metaData)) {
 			$primaryKey = $this->primaryKey;
 
-			if (is_null($this->$primaryKey)) {
+			if (is_null($this->primaryKey)) {
 				// If nothing has been set and there is no ID then there will be no data
 				$this->metaData = (object)[];
 			} else {
