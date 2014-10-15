@@ -2,6 +2,7 @@
     "name": "jaybizzle/hasmeta",
     "license": "MIT",
     "description": "Access model meta data as if it was a property on your model",
+    "keywords": ["laravel", "meta", "data", "key", "value"],
     "authors": [
         {
             "name": "Mark Beech",
