@@ -157,6 +157,8 @@ trait HasMetaTrait
 			if(!is_null($data->{$this->meta_value_name}))
 				$data->save();
 		}
+		
+		return true;
 	}
 
 	protected function deleteMeta() {
@@ -168,5 +170,7 @@ trait HasMetaTrait
 				$data->destroy($data->$dataID);
 			}
 		}
+		
+		return true;
 	}
 }
