@@ -76,12 +76,23 @@ trait HasMetaTrait
 			}
 		} catch (Exception $e) { }
 
-		$columns = \DB::select('DESCRIBE '.$this->table);
+		if(\Config::get('database.default') === 'sqlite') {
+			$columns = \DB::select('PRAGMA table_info('.$this->table.')');
 
-		foreach ($columns as $column) {
-			if ($column->Field === $key) {
-				$this->setAttribute($key, $value);
-				return;
+			foreach ($columns as $column) {
+				if ($column->name === $key) {
+					$this->setAttribute($key, $value);
+					return;
+				}
+			}
+		} else {
+			$columns = \DB::select('DESCRIBE '.$this->table);
+
+			foreach ($columns as $column) {
+				if ($column->Field === $key) {
+					$this->setAttribute($key, $value);
+					return;
+				}
 			}
 		}
 
