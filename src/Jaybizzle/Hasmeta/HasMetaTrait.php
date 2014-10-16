@@ -99,23 +99,13 @@ trait HasMetaTrait
 	}
 
 	public function push() {
-		parent::push();
 
-		// clear out current meta data
-		$this->deleteMeta();
-
-		// Save the meta data
-		$this->saveMeta();
+		return parent::push() && $this->deleteMeta() && $this->saveMeta();
 	}
 
 	public function save(array $options = array()) {
-		parent::save();
-
-		// clear out current meta data
-		$this->deleteMeta();
-
-		// Save the meta data
-		$this->saveMeta();
+		
+		return parent::save() && $this->deleteMeta() && $this->saveMeta();
 	}
 
 	/**
