@@ -114,9 +114,9 @@ trait HasMetaTrait
 		return parent::push() && $this->deleteMeta() && $this->saveMeta();
 	}
 
-	public function save(array $options = array()) {
+	public function doSave(array $options = array()) {
 		
-		return parent::save() && $this->deleteMeta() && $this->saveMeta();
+		return parent::doSave() && $this->deleteMeta() && $this->saveMeta();
 	}
 
 	/**
@@ -155,7 +155,7 @@ trait HasMetaTrait
 			}
 			
 			if(!is_null($data->{$this->meta_value_name}))
-				$data->save();
+				$data->doSave();
 		}
 		
 		return true;
