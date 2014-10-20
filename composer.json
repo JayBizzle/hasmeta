@@ -1,5 +1,5 @@
 {
-    "name": "jaybizzle/hasmeta",
+    "name": "diyriver/hasmeta",
     "license": "MIT",
     "description": "Access model meta data as if it was a property on your model",
     "keywords": ["laravel", "meta", "data", "key", "value"],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Jaybizzle\\Hasmeta\\": "src/"
+            "DIYRiver\\Hasmeta\\": "src/"
         }
     },
     "minimum-stability": "stable"
