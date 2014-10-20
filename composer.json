@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Jaybizzle\\Hasmeta\\": "src/"
+            "DIYRiver\\Hasmeta\\": "src/"
         }
     },
     "minimum-stability": "stable"
