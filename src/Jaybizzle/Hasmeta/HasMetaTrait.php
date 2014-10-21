@@ -147,12 +147,8 @@ trait HasMetaTrait
 	}
 
 	protected function saveMeta() {
-		$primaryKey = $this->primaryKey;
 
 		foreach ((array)$this->getMeta() as $data) {
-			if (is_null($data->$primaryKey)) {
-				$data->$primaryKey = $this->$primaryKey;
-			}
 			
 			if(!is_null($data->{$this->meta_value_name}))
 				$data->save();
@@ -162,7 +158,6 @@ trait HasMetaTrait
 	}
 
 	protected function deleteMeta() {
-		$primaryKey = $this->primaryKey;
 
 		foreach ((array)$this->getMeta() as $data) {
 			if(is_null($data->{$this->meta_value_name})) {
