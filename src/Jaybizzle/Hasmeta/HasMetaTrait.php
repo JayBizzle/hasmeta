@@ -147,8 +147,14 @@ trait HasMetaTrait
 	}
 
 	protected function saveMeta() {
+		
+		$primaryKey = $this->primaryKey;
 
 		foreach ((array)$this->getMeta() as $data) {
+			
+			if (is_null($data->{$this->meta_foreign_key})) {
+				$data->{$this->meta_foreign_key} = $this->$primaryKey;
+			}
 			
 			if(!is_null($data->{$this->meta_value_name}))
 				$data->save();
