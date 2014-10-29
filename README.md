@@ -3,6 +3,8 @@ HasMeta
 
 A Laravel trait to access model meta data as if it was a property on your model
 
+[![Latest Stable Version](https://poser.pugx.org/jaybizzle/hasmeta/v/stable.svg)](https://packagist.org/packages/jaybizzle/hasmeta) [![Total Downloads](https://poser.pugx.org/jaybizzle/hasmeta/downloads.svg)](https://packagist.org/packages/jaybizzle/hasmeta) [![Latest Unstable Version](https://poser.pugx.org/jaybizzle/hasmeta/v/unstable.svg)](https://packagist.org/packages/jaybizzle/hasmeta) [![License](https://poser.pugx.org/jaybizzle/hasmeta/license.svg)](https://packagist.org/packages/jaybizzle/hasmeta)
+
 Installation
 ============
 
