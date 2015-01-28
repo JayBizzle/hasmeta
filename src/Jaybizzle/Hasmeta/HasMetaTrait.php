@@ -1,23 +1,21 @@
-<?php 
-namespace Jaybizzle\Hasmeta;
-
+<?php namespace Jaybizzle\Hasmeta;
 
 trait HasMetaTrait
 {
-
 	protected $metaData = NULL;
 	
-	protected function newMeta($meta, $extra = array()) {
+	protected function newMeta($meta, $extra = array())
+	{
 		$metaModel = new $this->meta_model();
 		$metaModel->{$this->meta_key_name} = $meta[$this->meta_key_name];
 		$metaModel->{$this->meta_value_name} = $meta[$this->meta_value_name];
 		$metaModel->{$this->meta_foreign_key} = $this->{$this->meta_primary_key};
 
-		if(!empty($extra)) {
-			foreach($extra as $key => $value) {
+		// if(!empty($extra)) {
+		// 	foreach($extra as $key => $value) {
 
-			}
-		}
+		// 	}
+		// }
 
 		return $metaModel;
 	}
@@ -28,7 +26,8 @@ trait HasMetaTrait
 	 *
 	 * @return hasOne
 	 */
-	public function meta() {
+	public function meta()
+	{
 		return $this->hasMany($this->meta_model, $this->meta_foreign_key, $this->primaryKey);
 	}
 
@@ -38,7 +37,8 @@ trait HasMetaTrait
 	 * @param  string  $key
 	 * @return mixed
 	 */
-	public function __get($key) {
+	public function __get($key)
+	{
 		$value = $this->getAttribute($key);
 
 		if (is_null($value)) {
@@ -63,7 +63,8 @@ trait HasMetaTrait
 	 * @param  mixed   $value
 	 * @return void
 	 */
-	public function __set($key, $value) {
+	public function __set($key, $value)
+	{
 		if (array_key_exists($key, $this->getAttributes())) {
 			$this->setAttribute($key, $value);
 			return;
@@ -100,8 +101,8 @@ trait HasMetaTrait
 	}
 
 
-	public function __isset($key) {
-
+	public function __isset($key)
+	{
 		if ((isset($this->attributes[$key]) || isset($this->relations[$key])) || ($this->hasGetMutator($key) && ! is_null($this->getAttributeValue($key)))) {
 			return true;
 		}
@@ -109,13 +110,13 @@ trait HasMetaTrait
 		return isset($this->getMeta()->$key->{$this->meta_value_name});
 	}
 
-	public function push() {
-
+	public function push() 
+	{
 		return parent::push() && $this->deleteMeta() && $this->saveMeta();
 	}
 
-	public function save(array $options = array()) {
-		
+	public function save(array $options = array())
+	{
 		return parent::save() && $this->deleteMeta() && $this->saveMeta();
 	}
 
@@ -124,7 +125,8 @@ trait HasMetaTrait
 	 *
 	 * @return array
 	 */
-	protected function getMeta() {
+	protected function getMeta()
+	{
 		if (is_null($this->metaData)) {
 			$primaryKey = $this->primaryKey;
 
@@ -146,8 +148,8 @@ trait HasMetaTrait
 		return $this->metaData;
 	}
 
-	protected function saveMeta() {
-		
+	protected function saveMeta()
+	{
 		$primaryKey = $this->primaryKey;
 
 		foreach ((array)$this->getMeta() as $data) {
@@ -163,8 +165,8 @@ trait HasMetaTrait
 		return true;
 	}
 
-	protected function deleteMeta() {
-
+	protected function deleteMeta() 
+	{
 		foreach ((array)$this->getMeta() as $data) {
 			if(is_null($data->{$this->meta_value_name})) {
 				$dataID = $this->meta_primary_key;
