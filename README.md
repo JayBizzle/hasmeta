@@ -19,7 +19,7 @@ In the Model that you want to utilise `HasMeta` add the following properties
 	protected $meta_foreign_key = 'user_id'; // the foreign key of your main model
 	protected $meta_primary_key = 'meta_id'; // the primary key of you meta data model
 	protected $meta_key_name    = 'dataName'; // the column name that stores your meta data key name
-	protected $meta_value_name  = 'dataValue'; // the column name that stores you meta data value
+	protected $meta_value_name  = 'dataValue'; // the column name that stores your meta data value
 ```
 
 Real World Example
