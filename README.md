@@ -152,11 +152,3 @@ $user = User::find(1);
 $user->anything_you_want = 'some lovely value';
 $user->save();
 ```
-
-Delete meta...
-
-```PHP
-$user = User::find(1);
-$user->anything_you_want = null;
-$user->save();
-```
